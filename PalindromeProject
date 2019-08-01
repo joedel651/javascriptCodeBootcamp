@@ -1,0 +1,16 @@
+function palindrome(str) {
+  // Good luck!
+  // W means a charcter that is not defined as part of a word _ is not included for some reason 
+ str = str.replace(/[\W_]/g, '').toLowerCase(); 
+ let reverse = str.replace(/[\W_]/g, '').toLowerCase().split('').reverse().join('');
+ if(str === reverse){
+   return true;
+ }
+
+ else {return false;}
+ 
+}
+
+
+
+console.log(palindrome("eye_"));
