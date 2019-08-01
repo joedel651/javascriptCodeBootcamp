@@ -1,0 +1,36 @@
+function translatePigLatin(str) {
+
+  // make a regex of the vowels
+  // i case insenseitive 
+  // g search for all matches
+    var regex = /[aeiou]/gi;
+
+//base case for if the first char is a vowel
+    if(str[0].match(regex)){
+      return str + "way";
+    }
+    //case for if none of the chars are vowels
+    else if (str.match(regex) === null){
+      return str + "ay";
+
+    }
+
+  
+    else {
+
+    //find the index of the first match made by regex 
+      var vowelposition = str.indexOf(str.match(regex)[0]);
+      //substr is easier to use than splice because the delete count does not need to be defined
+      //cut off the first set of constants
+      //substr when given 2 arguments will set a range and cut off the rest 
+      // the 2 args is used to add the constants at the end 
+      //folled by ay
+      return str.substr(vowelposition) + str.substr(0, vowelposition) + 'ay';
+    }
+
+  return str;
+}
+
+
+// test here
+translatePigLatin("consonant");
