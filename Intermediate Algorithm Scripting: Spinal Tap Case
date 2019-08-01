@@ -1,0 +1,27 @@
+function spinalCase(str) {
+  //Same as the website just commenting out for my understanding
+  // Create a variable for the white space and underscores.
+  //s+ means find all the whitespace not just the first instance of
+  //_+ same but for underlines
+  var regex2 = /\s+|_+/g;
+
+
+  //note: not w because we want do not want all the ASCII charcters in this case 
+//writing it this way does not include the _ or 0-9
+//seperating the lower and upper case conditions with )( is what creates a space between the two 
+  var regex1 = /([a-z])([A-Z])/g;
+
+
+
+  // Replace low-upper case to low-space-uppercase
+  // '$1 $2' means to modify when successful matches are made 
+  str = str.replace(regex1, '$1 $2');
+  
+  // Replace space and underscore with -
+  return str.replace(regex2, '-').toLowerCase();
+}
+
+// test here
+spinalCase('This Is Spinal Tap');
+let str = 'AllThe-small Things';
+console.log(str.replace(/([a-z][A-Z])/g, '$1'));
