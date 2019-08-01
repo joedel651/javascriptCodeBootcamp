@@ -1,0 +1,12 @@
+function diffArray(arr1, arr2) {
+  var newArr = [];
+  // Same, same; but different.
+  //approaching the problem as you would with a merge sort so I am concatenating the arrays
+  //.filter will allow me to set some constraints on the new array
+  //! is the same thing as not, | is or
+  //includes will check if arr1[x] is also containined in the concatenated array
+  //check both arrays against the merged array to ensure that no two same elements are returned
+  return arr1.concat(arr2).filter(x => !arr1.includes(x) | !arr2.includes(x));
+}
+
+diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
