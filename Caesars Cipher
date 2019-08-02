@@ -1,0 +1,13 @@
+function rot13(str) { // LBH QVQ VG!
+
+let regex = /[A-Z]/g;
+
+  //65mod(26) = 13, A is the first letter of the alphabet so that is a 13 shift
+  //add 65 because that is the range of the capitalized letters 
+  //this only works for capital letters could make a second case statement for lower case letters
+  //lowercase would start at 97
+  return str.replace(regex, char => String.fromCharCode((char.charCodeAt(0) % 26) + 65));
+}
+
+// Change the inputs below to test
+rot13("SERR PBQR PNZC");
