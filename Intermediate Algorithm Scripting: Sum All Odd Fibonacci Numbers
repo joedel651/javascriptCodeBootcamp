@@ -1,0 +1,22 @@
+function sumFibs(num) {
+  let count = num;
+  let a = 0;
+  let b = 1;
+  let total = 0;
+  
+  for(;b <= num;){
+   if (b % 2 !== 0) {
+            total += b;
+        }
+
+  b += a;
+  a = b - a;
+  console.log(total);
+
+
+
+  }
+  return total;
+}
+
+sumFibs(4);
