@@ -1,15 +1,9 @@
 function destroyer(arr) {
-  // Remove all the values
+  // use the spread operator to copy the arguments into an array 
+  let args = [...arguments];
 
-  //copy the entire set of arguments into an array using the spread operator
-  var args = Array.from(arguments);
-  var args = [...arguments];
-//print out to test
-  console.log(args);
-  
-//filter out the difference to make sure all the is returned is the difference
-  return arr.filter(x => !args.includes(x) | !args.includes(x));
-
+//filter the entire array of arguments vs the first to return only what was not included
+  return arr.filter(x => !args.includes(x) );
 }
 
 destroyer([1, 2, 3, 1, 2, 3], 2, 3);
