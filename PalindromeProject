@@ -14,3 +14,46 @@ function palindrome(str) {
 
 
 console.log(palindrome("eye_"));
+
+function palindrome(str) {
+
+  // Good luck!
+  //filter out lower case and underscores and nonwords
+  str = str.toLowerCase().replace(/[\W_]/g, '');
+  console.log(str);
+  //split the string itno an array 
+  let split = str.split("");
+  console.log(split)
+  // get the front and back of the string 
+  let length = split.length;
+  let front = 0;
+  let back = length-1;
+  console.log(split[front]);
+  console.log(front);
+  console.log(back);
+  console.log(split[back]);
+
+
+  while(back > front){
+
+    if( split[front] == split[back]){
+
+      front++;
+      back--;
+    }
+
+    if( split[front]!== split[back]){
+      return false;
+    }
+
+  
+
+  }
+
+ return true;
+}
+
+palindrome("eye");
+console.log(palindrome("_haNNah"));
+
+/* Doing it this method is better for time complexity than the split reverse join method */
