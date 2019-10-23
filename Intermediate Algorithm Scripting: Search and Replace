@@ -23,7 +23,7 @@ console.log(myReplace("A quick brown fox jumped over the lazy dog", "jumped", "l
 // Solution 2
 
 
-unction myReplace(str, before, after) {
+function myReplace(str, before, after) {
 
   //turn the string into an array 
   let myArr = str.split(" ");
