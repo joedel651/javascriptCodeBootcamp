@@ -19,3 +19,37 @@ else {
 }
 
 console.log(myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped"));
+
+// Solution 2
+
+
+unction myReplace(str, before, after) {
+
+  //turn the string into an array 
+  let myArr = str.split(" ");
+  
+
+  //check to see if the first letter in before is capital
+if(/^[A-Z]/.test(before) === true){
+  //set the first letter of after to capital 
+  after = after.replace(/^\w/, c => c.toUpperCase());
+}
+
+//iterate through the array and find before
+  for(let i = 0; i < myArr.length ; i++){
+
+
+    if(myArr[i] == before){
+
+      
+
+      //console.log(myArr.splice(i,1,after));
+      //at position i, delete before ( which is i) then add after
+      myArr.splice(i,1,after);
+      //join the string 
+      let string = myArr.join(" ");
+      //return the string
+      return string;
+      
+    }
+  }
